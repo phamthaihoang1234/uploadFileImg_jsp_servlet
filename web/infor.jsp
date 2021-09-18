@@ -1,4 +1,5 @@
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,10 +31,21 @@
                             <input type="text" 
                                    class="form-control" name="name" value="${INFOR.name}" placeholder="Enter name">
                         </div>
-                        
+
                         <div class="form-group">
                             <label>Photo</label> <br/>
+                            <c:if test="${INFOR.photo != null}">
+                                <img src="uploads/${INFOR.photo}" width="80" height="70" />
+                                
+                            </c:if>
+                            
+                                                       
                            
+                           
+                           
+
+                           
+
                             <input type="file" 
                                    class="form-control" name="photo" placeholder="Enter photo">
                         </div>

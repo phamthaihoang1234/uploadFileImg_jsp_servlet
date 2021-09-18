@@ -114,6 +114,17 @@ public class InforServlet extends HttpServlet {
                             inforNew.setPhoto(filename);
                             dao.save(inforNew);
                             System.out.println("Save");
+                        }else {
+                            System.out.println("Timf thay");
+                            Infor inforNew = new Infor();
+                            inforNew.setId(fields.get("id"));
+                            inforNew.setName(fields.get("name"));
+                            if(filename == null || filename.equals("")){
+                                inforNew.setPhoto(infor.getPhoto());
+                            }else {
+                                inforNew.setPhoto(filename);
+                            }
+                            dao.update(inforNew);
                         }
 
                     } catch (Exception e) {
